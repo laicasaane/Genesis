@@ -26,8 +26,8 @@ Unloading broken assembly Packages/com.laicasaane.genesis/Plugins/Microsoft.Code
 
 ## Minimum Requirements
 * Unity 2021.3.X
-* Scripting Runtime: .NET Standard 2.1
-* .NET 6.0
+* **Scripting Runtime:** .NET Standard 2.1
+* **Genesis.CLI Runtime:** .NET 6.0
 
 ## Installing Genesis
 Using this library in your project can be done in two ways:
@@ -46,7 +46,7 @@ Using the native Unity Package Manager introduced in 2017.2, you can add this li
 {
 	"dependencies": {
 		...
-		"com.laicasaane.genesis" : "https://github.com/jeffcampbellmakesgames/genesis.git#upm",
+		"com.laicasaane.genesis" : "https://github.com/laicasaane/genesis.git#upm",
 		...
 	}
 }
