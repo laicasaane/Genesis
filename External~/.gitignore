@@ -1,0 +1,8 @@
+*.DS_Store
+*.leu
+*.dwlt
+.temp
+.log
+*.pdb
+*.pdb.meta
+**/*.pdb

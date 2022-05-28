@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <GenerateFullPaths>false</GenerateFullPaths>
+	</PropertyGroup>
+
+	<Target Name="CopyBuildArtifacts" AfterTargets="Build">
+		<ItemGroup>
+			<DataFiles Include="$(ProjectDir)$(OutDir)**\*.*" />
+		</ItemGroup>
+
+		<Copy SourceFiles="@(DataFiles)"
+		      DestinationFolder="$(ProjectDir)..\..\Genesis.CLI\Plugins\%(RecursiveDir)"
+		      SkipUnchangedFiles="true" />
+
+        <Copy SourceFiles="@(DataFiles)"
+		      DestinationFolder="$(ProjectDir)..\..\..\Plugins\"
+		      SkipUnchangedFiles="true" />
+	</Target>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Genesis.Core\Genesis.Core.csproj" />
+	  <ProjectReference Include="..\Genesis.Plugin\Genesis.Plugin.csproj" />
+	</ItemGroup>
+</Project>

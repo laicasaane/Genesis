@@ -1,4 +1,9 @@
 *.DS_Store
 *.leu
 [Bb]uilds/
-[Pp]ublish/
+*.dwlt
+.temp
+.log
+*.pdb
+*.pdb.meta
+**/*.pdb

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>8.0</LangVersion>
+		<AssemblyName>Genesis.Shared</AssemblyName>
+		<RootNamespace>Genesis.Shared</RootNamespace>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <GenerateFullPaths>false</GenerateFullPaths>
+	</PropertyGroup>
+
+
+	<Target Name="CopyBuildArtifacts" AfterTargets="Build">
+		<ItemGroup>
+			<DataFiles Include="$(ProjectDir)$(OutDir)*.dll;$(ProjectDir)$(OutDir)*.pdb" />
+		</ItemGroup>
+		<Copy SourceFiles="@(DataFiles)"
+		      DestinationFolder="$(ProjectDir)..\..\..\Plugins\"
+		      SkipUnchangedFiles="true" />
+	</Target>
+
+</Project>
